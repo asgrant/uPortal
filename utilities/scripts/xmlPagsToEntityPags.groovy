@@ -27,7 +27,7 @@
  * groovy xmlPagsToEntityPags.groovy pathToPAGSGroupStoreConfig.xml directoryToWriteEntityFilesTo
  *
  * However it can also be invoked via ant as:
- * ant -Dmaven.test.skip=true -Ddir=directoryToWriteEntityFilesTo pagsXmlToEntity
+ * ant -Dmaven.test.skip=true -Ddir=directoryToWriteEntityFilesTo data-import
  * in which case to this groovy script it will look as if invoked as
  * groovy -s pathToscript xmlPagsToEntityPags.groovy pathToPAGSGroupStoreConfig.xml directoryToWriteEntityFilesTo
  *
@@ -139,7 +139,7 @@ pagsXml.group.each { group ->
                                     'attribute-name'(testItem.'attribute-name'.text())
                                     'tester-class'(testItem.'tester-class'.text())
                                     'test-value'(testItem.'test-value'.text())
-                                }
+                                }                                          pagsXmlToEntity
                             }
                         }
                     }
@@ -193,7 +193,7 @@ println "   entity PAGS instead of XML PAGS.  See comments in the file. Entity P
 println "2. do an ant initdb"
 println "   OR"
 println "   a) Import the created pags-entity files into your database"
-println "      ant -Dmaven.test.skip=true -Ddir=${targetDir} pagsXmlToEntity"
+println "      ant -Dmaven.test.skip=true -Ddir=${targetDir} data-import"
 println "   b) If upgrading uPortal 4.1+ that used XML PAGS, run the SQL script ${sqlFile.absolutePath} on the db"
 println()
 println()
