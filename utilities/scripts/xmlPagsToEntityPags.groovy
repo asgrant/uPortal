@@ -188,12 +188,12 @@ println "If you have an existing uPortal 4.1+ database and you do not want to ru
 println "also need to run the sql file ${sqlFile.absolutePath} on your database to update it."
 println()
 println "You're not done!  Don't forget:"
-println "1. update uportal-war/src/main/resources/properties/groups/compositeGroupServices.xml to use entity PAGS"
-println "   instead of XML PAGS.  See comments in the file."
+println "1. pre uPortal 4.2.0: update uportal-war/src/main/resources/properties/groups/compositeGroupServices.xml to use"
+println "   entity PAGS instead of XML PAGS.  See comments in the file. Entity PAGS enabled by default in uPortal 4.2.0"
 println "2. do an ant initdb"
 println "   OR"
 println "   a) Import the created pags-entity files into your database"
-println "     ant -Dmaven.test.skip=true -Ddir=${targetDir}"
+println "      ant -Dmaven.test.skip=true -Ddir=${targetDir}"
 println "   b) If upgrading uPortal 4.1+ that used XML PAGS, run the SQL script ${sqlFile.absolutePath} on the db"
 println()
 println()
